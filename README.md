@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors!
 
-A web tool inspired by the classic "Etch A Sketch" toy done for [The Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
+A web tool inspired by the classic "Etch A Sketch" toy, done as part for [The Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
 
 ## Live Preview
 [Live Preview of the Project](https://s-y-a-n.github.io/etch-a-sketch/)
