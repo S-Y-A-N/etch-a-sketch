@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/script.js" defer></script>
     <title>Etch A Sketch</title>
 </head>
 <body>
@@ -38,13 +39,21 @@
 
         <div class="container">
             <div class="toolbox">
-                <button>Color</button>
-                <button>Rainbow</button>
-                <button>Eraser</button>
-                <button>Clear</button>
+                <div class="buttons">
+                    <button id="colorBtn">Color</button>
+                    <button id="rainbowBtn">Rainbow</button>
+                    <button id="eraserBtn">Eraser</button>
+                    <button id="clearBtn">Clear</button>
+                </div>
+
+                <div class="scroll">
+                    <label for="grid-size">Grid Size</label>
+                    <input id="gridRange" type="range" name="grid-size" value="32" min="1" max="64" oninput="rangeValue.value=value">
+                    <output id="rangeValue">32</output>
+                </div>
             </div>
 
-            <div class="grid-container">
+            <div class="grid-container" id="gridContainer">
 
             </div>
         </div>
