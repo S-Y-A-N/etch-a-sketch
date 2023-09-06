@@ -5,6 +5,7 @@
     --primary-dark: #be5b8c;
     --primary-light: #ecb2c0;
     --secondary-dark: #791649;
+    --secondary-light: #fdd8e2;
     --highlight: #9c1d5f;
     
 }
@@ -57,7 +58,8 @@ button {
     padding: 10px 20px;
 }
 
-button:hover {
+button:hover, 
+input[type="range"]:hover {
     cursor: pointer;
     background-color: var(--secondary-dark);
 }
@@ -75,6 +77,11 @@ a:hover {
     text-decoration: underline;
 }
 
+input[type="range"] {
+    accent-color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -84,6 +91,7 @@ a:hover {
 .cards {
     margin: 30px auto;
     display: flex;
+    display: none;
 }
 
 .info-card {
@@ -103,9 +111,33 @@ a:hover {
 .toolbox {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-right: 30px;
+    height: 350px;
+    background-color: var(--secondary-light);
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
     height: 250px;
+}
+
+.buttons button {
+    margin-bottom: 10px;
+}
+
+.scroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll label {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .grid-container {
