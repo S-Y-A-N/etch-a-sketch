@@ -58,10 +58,12 @@ button {
     padding: 10px 20px;
 }
 
-button:hover, 
-input[type="range"]:hover {
+button:hover {
+    background-color: var(--highlight);
+}
+
+button, input {
     cursor: pointer;
-    background-color: var(--secondary-dark);
 }
 
 h2 {
@@ -75,6 +77,16 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+input[type="color"] {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: transparent;
+    align-self: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 input[type="range"] {

@@ -40,15 +40,15 @@
         <div class="container">
             <div class="toolbox">
                 <div class="buttons">
-                    <button id="colorBtn">Color</button>
-                    <button id="rainbowBtn">Rainbow</button>
+                    <input id="colorSelector" type="color" value="#be5b8c">
+                    <button id="rainbowBtn">Rainbow Mode</button>
                     <button id="eraserBtn">Eraser</button>
                     <button id="clearBtn">Clear</button>
                 </div>
 
                 <div class="scroll">
-                    <label for="grid-size">Grid Size</label>
-                    <input id="gridRange" type="range" name="grid-size" value="32" min="1" max="64" oninput="rangeValue.value=value">
+                    <label for="gridRange">Grid Size</label>
+                    <input id="gridRange" type="range" value="32" min="1" max="64" oninput="rangeValue.value=value">
                     <output id="rangeValue">32</output>
                 </div>
             </div>

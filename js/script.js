@@ -1,11 +1,14 @@
-const colorBtn = document.getElementById('colorBtn');
+// DOM Constants
+
+const colorSelector = document.getElementById('colorSelector');
 const rainbowBtn = document.getElementById('rainbowBtn');
 const eraserBtn = document.getElementById('eraserBtn');
 const clearBtn = document.getElementById('clearBtn');
+const gridRange = document.getElementById('gridRange');
 
 const gridContainer = document.getElementById('gridContainer');
 
-const gridRange = document.getElementById('gridRange');
+// Functions
 
 function createGrid(gridSize = 32) {
     gridContainer.innerHTML = '';
@@ -17,9 +20,7 @@ function createGrid(gridSize = 32) {
     }
 }
 
-function onRangeClick() {
-    const value = gridRange.value;
-    return value;
-}
+// Event Listeners
 
-gridRange.addEventListener('input', () => createGrid(onRangeClick()))
+window.addEventListener('load', () => createGrid(gridRange.value));
+gridRange.addEventListener('input', () => createGrid(gridRange.value));
