@@ -58,7 +58,7 @@ button {
     padding: 10px 20px;
 }
 
-button:hover {
+button:hover, .active {
     background-color: var(--highlight);
 }
 
@@ -165,4 +165,5 @@ input[type="range"] {
 .grid-container div {
     border: 1px solid #f0f0f0;
     aspect-ratio: 1;
+    cursor: pointer;
 }
