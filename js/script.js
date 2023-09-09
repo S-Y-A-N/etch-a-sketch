@@ -14,7 +14,7 @@ let gridPixels;
 
 // Functions
 
-function activeButton(e) {
+function activateButton(e) {
     switch(e.target.id) {
         case 'colorBtn':
             colorBtn.classList.add('active');
@@ -45,27 +45,25 @@ function createGrid(gridSize = 32) {
     gridPixels = document.querySelectorAll('#gridContainer div');
 }
 
-function colorGrid(e) {
+function drawOnGrid(e) {
+    if(!mouseDown) return;
+
     if(colorBtn.classList.contains('active')) {
         let pixel = e.toElement;
         let color = colorSelector.value;
         pixel.style.backgroundColor = color;
     }
-}
 
-function rainbowGrid(e) {
     if(rainbowBtn.classList.contains('active')) {
         let R = Math.floor(Math.random() * 256);
         let G = Math.floor(Math.random() * 256);
         let B = Math.floor(Math.random() * 256);
 
         let pixel = e.toElement;
-        let color = `rgb(${R}, ${G}, ${B}, 20%)`
+        let color = `rgb(${R}, ${G}, ${B}, 30%)`
         pixel.style.backgroundColor = color;
     }
-}
 
-function eraseGrid(e) {
     if(eraserBtn.classList.contains('active')) {
         let pixel = e.toElement;
         pixel.style.backgroundColor = '';
@@ -85,13 +83,16 @@ window.addEventListener('load', () => {
     colorBtn.classList.add('active');
 });
 
-colorBtn.addEventListener('click', activeButton);
-rainbowBtn.addEventListener('click', activeButton);
-eraserBtn.addEventListener('click', activeButton);
+let mouseDown = false;
+gridContainer.onmousedown = () => mouseDown = true;
+gridContainer.onmouseup = () => mouseDown = false;
+
+colorBtn.addEventListener('click', activateButton);
+rainbowBtn.addEventListener('click', activateButton);
+eraserBtn.addEventListener('click', activateButton);
 clearBtn.addEventListener('click', clearGrid);
 
 gridRange.addEventListener('input', () => createGrid(gridRange.value));
 
-gridContainer.addEventListener('mousedown', colorGrid);
-gridContainer.addEventListener('mousedown', rainbowGrid);
-gridContainer.addEventListener('mousedown', eraseGrid);
+gridContainer.addEventListener('mouseover', drawOnGrid);
+gridContainer.addEventListener('mousedown', drawOnGrid);
