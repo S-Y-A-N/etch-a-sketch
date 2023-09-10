@@ -7,7 +7,6 @@
     --secondary-dark: #791649;
     --secondary-light: #fdd8e2;
     --highlight: #9c1d5f;
-    
 }
 
 * {
@@ -100,22 +99,6 @@ input[type="range"] {
     align-items: center;
 }
 
-.cards {
-    margin: 30px auto;
-    display: flex;
-    display: none;
-}
-
-.info-card {
-    max-width: 400px;
-    background-color: var(--secondary-dark);
-    color: var(--main-color);
-    padding: 25px 60px;
-    margin-left: 10px;
-    border-radius: 5px;
-    border-left: 10px solid var(--highlight);
-}
-
 .container {
     display: flex;
 }
@@ -125,7 +108,7 @@ input[type="range"] {
     flex-direction: column;
     justify-content: space-between;
     margin-right: 30px;
-    height: 350px;
+    height: 500px;
     background-color: var(--secondary-light);
     padding: 10px;
 }
@@ -133,7 +116,7 @@ input[type="range"] {
 .buttons {
     display: flex;
     flex-direction: column;
-    height: 250px;
+    height: 400px;
 }
 
 .buttons button {
