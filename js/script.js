@@ -4,6 +4,8 @@ const colorSelector = document.getElementById('colorSelector');
 
 const colorBtn = document.getElementById('colorBtn');
 const rainbowBtn = document.getElementById('rainbowBtn');
+const darkenBtn = document.getElementById('darkenBtn');
+const lightenBtn = document.getElementById('lightenBtn');
 const eraserBtn = document.getElementById('eraserBtn');
 const clearBtn = document.getElementById('clearBtn');
 
@@ -19,16 +21,36 @@ function activateButton(e) {
         case 'colorBtn':
             colorBtn.classList.add('active');
             rainbowBtn.classList.remove('active');
+            darkenBtn.classList.remove('active');
+            lightenBtn.classList.remove('active');
             eraserBtn.classList.remove('active');
             break;
         case 'rainbowBtn':
             rainbowBtn.classList.add('active');
             colorBtn.classList.remove('active');
+            darkenBtn.classList.remove('active');
+            lightenBtn.classList.remove('active');
             eraserBtn.classList.remove('active');
             break;
+        case 'darkenBtn':
+            darkenBtn.classList.add('active');
+            colorBtn.classList.remove('active');
+            rainbowBtn.classList.remove('active');
+            lightenBtn.classList.remove('active');
+            eraserBtn.classList.remove('active');
+            break;
+        case 'lightenBtn':
+            lightenBtn.classList.add('active');
+            colorBtn.classList.remove('active');
+            rainbowBtn.classList.remove('active');
+            darkenBtn.classList.remove('active');
+            eraserBtn.classList.remove('active');
+            break;    
         case 'eraserBtn':
             eraserBtn.classList.add('active');
             colorBtn.classList.remove('active');
+            darkenBtn.classList.remove('active');
+            lightenBtn.classList.remove('active');
             rainbowBtn.classList.remove('active');
             break;
     }
@@ -48,8 +70,9 @@ function createGrid(gridSize = 32) {
 function drawOnGrid(e) {
     if(!mouseDown) return;
 
+    let pixel = e.toElement;
+
     if(colorBtn.classList.contains('active')) {
-        let pixel = e.toElement;
         let color = colorSelector.value;
         pixel.style.backgroundColor = color;
     }
@@ -59,14 +82,18 @@ function drawOnGrid(e) {
         let G = Math.floor(Math.random() * 256);
         let B = Math.floor(Math.random() * 256);
 
-        let pixel = e.toElement;
         let color = `rgb(${R}, ${G}, ${B}, 30%)`
         pixel.style.backgroundColor = color;
     }
 
+    if(darkenBtn.classList.contains('active')) {
+    }
+
+    if(lightenBtn.classList.contains('active')) {
+    }
+
     if(eraserBtn.classList.contains('active')) {
-        let pixel = e.toElement;
-        pixel.style.backgroundColor = '';
+        pixel.style.backgroundColor = '#fff'; //white
     }
 }
 
@@ -89,6 +116,8 @@ gridContainer.onmouseup = () => mouseDown = false;
 
 colorBtn.addEventListener('click', activateButton);
 rainbowBtn.addEventListener('click', activateButton);
+darkenBtn.addEventListener('click', activateButton);
+lightenBtn.addEventListener('click', activateButton);
 eraserBtn.addEventListener('click', activateButton);
 clearBtn.addEventListener('click', clearGrid);
 
